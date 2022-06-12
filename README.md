@@ -17,3 +17,5 @@ The following is an attempt to create a program that can track both hand motions
 Just for me to look back and see how far I have come, I will keep track of my progress on **hopefully** a daily basis.
 
 ## Day 1: Uhhh
+- ```drawing utilis``` essentially renders the landmarks to your hand.
+- ```solutions.hands``` brings in the hands model. 
