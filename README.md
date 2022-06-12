@@ -19,3 +19,12 @@ Just for me to look back and see how far I have come, I will keep track of my pr
 ## Day 1: Uhhh
 - ```drawing utilis``` essentially renders the landmarks to your hand.
 - ```solutions.hands``` brings in the hands model. 
+The following is common code to connect to webcam using OpenCV:
+```while ss.isOpened():   #While connected to the webcam
+    ret, frame = ss.read() #reading each frame
+    cv2.imshow("Hand Tracking", frame)  #Rendering the image
+    
+    if cv2.waitKey(10) & 0xFF == ord('q'):  #If I hit 'q', it closes
+        break
+ss.release()
+cv2.destroyAllWindows()```
