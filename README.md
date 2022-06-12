@@ -19,12 +19,22 @@ Just for me to look back and see how far I have come, I will keep track of my pr
 ## Day 1: Uhhh
 - ```drawing utilis``` essentially renders the landmarks to your hand.
 - ```solutions.hands``` brings in the hands model. 
+- ```cv2.cvtColor()``` is a function that you to recolor an image
+- ```mpHandsModel.HAND_CONNECTIONS ``` tells what parts are connected (wrist it connected to palm, etc...)
 The following is common code to connect to webcam using OpenCV:
-```while ss.isOpened():   #While connected to the webcam
+```
+ss = cv2.VideoCapture(0)   #Might need to play around with this on other devices
+
+while ss.isOpened():   #While connected to the webcam
     ret, frame = ss.read() #reading each frame
     cv2.imshow("Hand Tracking", frame)  #Rendering the image
     
     if cv2.waitKey(10) & 0xFF == ord('q'):  #If I hit 'q', it closes
         break
 ss.release()
-cv2.destroyAllWindows()```
+cv2.destroyAllWindows()
+```
+
+So one thing I noticed is that when I set "n" in ```cv2.VideoCapture(n)``` to 0, it opens the back camera on my Surface Pro, however setting n to 1 opened the front camera.
+
+NOTE: Set the frame in ```cv2.imshow("Hand Tracking", frame)``` to img to see the tracking being rendered or else you will see normal feed
