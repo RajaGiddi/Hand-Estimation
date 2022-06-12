@@ -7,6 +7,9 @@ The following is an attempt to create a program that can track both hand motions
 - **Mediapipe** - I found about this when looking into ML libraries for Arduino. This library is cross-platform and can be used to for ML image processing. It uses 21 landmarks to track hand movements from a single frame. For information check out:
     - https://learnopencv.com/introduction-to-mediapipe/
     - https://google.github.io/mediapipe/solutions/hands
+
+<img src= "https://google.github.io/mediapipe/images/mobile/hand_landmarks.png">
+
 - **uuid** - Generates a random string for each image so that there are no overlaps between each image
 - **os** - I've seen this many times and from what I know it is just an operating system library that makes it easier for cross-platform
 
