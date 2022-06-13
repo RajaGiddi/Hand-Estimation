@@ -16,7 +16,7 @@ The following is an attempt to create a program that can track both hand motions
 # Progress
 Just for me to look back and see how far I have come, I will keep track of my progress on **hopefully** a daily basis.
 
-## Day 1: Uhhh
+## Day 1: Uhhh...Hand tracking
 - ```drawing utilis``` essentially renders the landmarks to your hand.
 - ```solutions.hands``` brings in the hands model. 
 - ```cv2.cvtColor()``` is a function that you to recolor an image
@@ -38,3 +38,8 @@ cv2.destroyAllWindows()
 So one thing I noticed is that when I set "n" in ```cv2.VideoCapture(n)``` to 0, it opens the back camera on my Surface Pro, however setting n to 1 opened the front camera.
 
 NOTE: Set the frame in ```cv2.imshow("Hand Tracking", frame)``` to img to see the tracking being rendered or else you will see normal feed
+
+Overall, I was able to implement the hand tracking following Nicholas's video + mediapipe documentation
+
+
+## Day 2: Working with servos
