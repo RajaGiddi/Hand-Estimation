@@ -44,3 +44,8 @@ Overall, I was able to implement the hand tracking following Nicholas's video + 
 
 ## Day 2: Building a test motor housing model
 Tbh, I didn't do much today. I tried, but I got lazy lol. I did make a quick housing model for 5 servos. I plan on implementing the code for the servos tommorow and print the model to test it but we shall see. Not as productive as I hoped.
+
+## Day 3: Building the code for motors
+I looked around to see if I can find a template code to work with, turns out a lot of people have been doing it (to which I wasn't surprised) and I was watching this link : https://www.youtube.com/watch?v=7KV5489rL3c to learn more. I already have a 3D model I built with Joseph Rajasekaran so I will use that model and probably include wrist mobility as well to expand on the template provided. Additionally I might also add other features such as force sensation and haptic sensation but that's for a later time. The basic logic for the code is to have a "$" tag that acts as an identifier for the string. So once the "$" is detected, the code will begin to run.
+- 0 = close
+- 1 = open
