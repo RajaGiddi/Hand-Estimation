@@ -42,4 +42,5 @@ NOTE: Set the frame in ```cv2.imshow("Hand Tracking", frame)``` to img to see th
 Overall, I was able to implement the hand tracking following Nicholas's video + mediapipe documentation
 
 
-## Day 2: Working with servos
+## Day 2: Building a test motor housing model
+Tbh, I didn't do much today. I tried, but I got lazy lol. I did make a quick housing model for 5 servos. I plan on implementing the code for the servos tommorow and print the model to test it but we shall see. Not as productive as I hoped.
