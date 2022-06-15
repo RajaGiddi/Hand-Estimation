@@ -43,9 +43,35 @@ Overall, I was able to implement the hand tracking following Nicholas's video + 
 
 
 ## Day 2: Building a test motor housing model
-Tbh, I didn't do much today. I tried, but I got lazy lol. I did make a quick housing model for 5 servos. I plan on implementing the code for the servos tommorow and print the model to test it but we shall see. Not as productive as I hoped.
+Tbh, I didn't do much today. I tried, but I got lazy lol. I did make a quick housing model for 5 servos (using FreeCAD). I plan on implementing the code for the servos tommorow and print the model to test it but we shall see. Not as productive as I hoped.
 
-## Day 3: Building the code for motors
+## Day 3: Building the code for motors and WOW MY MIND HURTS
 I looked around to see if I can find a template code to work with, turns out a lot of people have been doing it (to which I wasn't surprised) and I was watching this link : https://www.youtube.com/watch?v=7KV5489rL3c to learn more. I already have a 3D model I built with Joseph Rajasekaran so I will use that model and probably include wrist mobility as well to expand on the template provided. Additionally I might also add other features such as force sensation and haptic sensation but that's for a later time. The basic logic for the code is to have a "$" tag that acts as an identifier for the string. So once the "$" is detected, the code will begin to run.
 - 0 = close
 - 1 = open
+
+### A LOT of ERRORS:
+Okay so a lot of things happened and tbh my mind is too fried at the moment to recollect what exactly happened. For starters a lot of errors came. From what I recalled, I did the following things to resolve:
+- Had trouble connecting thr right port to the Arduino UNO so I re-routed it COM3 rather than whatever it was set to. This caused errors intitally when I tried to run, verify, or upload any code (https://support.arduino.cc/hc/en-us/articles 360016420140-COM-port-number-changes-when-connecting-board-on-different-ports-or-in-bootloader-mode ; https://forums.engineersgarage.com/forums/topic/avrdude-ser_open-cant-open-device-com4/#:~:text=w%3Aon_off1.hex-,avrdude%3A%20ser_open()%3A%20can't%20open%20device%20%E2%80%9Ccom4%E2%80%9D,semaphore%20timeout%20period%20has%20expired.&text=Hi%2C,number%20accordingly%20in%20the%20avrdude.)
+- downgraded opencv to version 4.5.1.48 (https://code.luasoftware.com/tutorials/python/python-pip-downgrade-package/)
+- downgraded mediapipe to version 0.8.3.1
+- installed cvzone using pip rather than conda (https://pythonlang.dev/repo/cvzone-cvzone/)
+- Had trouble importing cvzone modules so I had to downgrade this to version 1.4.1
+- Still had trouble with cvzone modules so I imported them as the following way by looking at the github Repo (https://github.com/cvzone/cvzone):
+``` from cvzone.{Whatever the module I needed} import {the function I needed}```
+- had trouble with openCV in connecting it to camera (https://www.codingforentrepreneurs.com/comments/14722)
+```
+Rather than:
+ss = cv2.VideoCapture(0)
+It was:
+ss = cv2.VideoCapture(0,cv2.CAP_DSHOW)
+```
+- ModuleError came for serial and another serial.tools.list_ports module, so I did (https://stackoverflow.com/questions/14108428/pyserial-no-module-named-tools):
+```pip install serial``` AND ```pip install pyserial```
+- Modified the code to close once I click 'q'
+
+### The Successes:
+- Was able to see a 1D array that kept updating hand movement
+- Was able to connect the servos to the code
+- Was able to modify the handtrack code a bit to fit needs
+- Was able to understand a majority of the coding done (had to reference once to https://www.arduino.cc/reference/en/language/variables/data-types/array/ to understand how arrays worked)
