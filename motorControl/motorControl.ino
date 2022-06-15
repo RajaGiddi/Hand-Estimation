@@ -57,7 +57,6 @@ void recievedData() {
 void loop() {
 
   recievedData();
-  // This is what drives the code, the DRIVER CODE (lol Abe)
   if (valsRec[0] == 1) {servoThumb.write(180); }else{ servoThumb.write(0);}
   if (valsRec[0] == 1) {servoIndex.write(180); }else{ servoIndex.write(0);}
   if (valsRec[0] == 1) {servoMiddle.write(180); }else{ servoMiddle.write(0);}
