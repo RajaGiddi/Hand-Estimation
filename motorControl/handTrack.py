@@ -5,9 +5,9 @@ from cvzone.SerialModule import SerialObject
 
 #Connecting to the camera using OpenCV
 ss = cv2.VideoCapture(0,cv2.CAP_DSHOW)   #0 = back camera, 1 = front camera ; play around on other devices
-detector = HandDetector(maxHands = 1, detectionCon = 0.7)
+detector = HandDetector(maxHands = 2, detectionCon = 0.7)
 mySerial = SerialObject("COM3", 9600, 1)
-
+ 
 while True:
     success, img = ss.read()
     img = detector.findHands(img)

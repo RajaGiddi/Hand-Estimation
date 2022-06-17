@@ -43,12 +43,12 @@ void recievedData() {
       if (counter >= stringLen) {
         for (int i = 0; i < numOfValsRec ; i++) {
           int num = (i * digitsPerVal) + 1;
-          valsRec[i] = recievedString.substring(num, num + digitsPerVal).toInt();
+        valsRec[i] = recievedString.substring(num, num + digitsPerVal).toInt();
           }
           // RESETS
-          recievedString = "";
-          counter = 0;
-          counterStart = false;
+        recievedString = "";
+        counter = 0;
+        counterStart = false;
         }
       }
     }
@@ -58,8 +58,8 @@ void loop() {
 
   recievedData();
   if (valsRec[0] == 1) {servoThumb.write(180); }else{ servoThumb.write(0);}
-  if (valsRec[0] == 1) {servoIndex.write(180); }else{ servoIndex.write(0);}
-  if (valsRec[0] == 1) {servoMiddle.write(180); }else{ servoMiddle.write(0);}
-  if (valsRec[0] == 1) {servoRing.write(180); }else{ servoRing.write(0);}
-  if (valsRec[0] == 1) {servoPinky.write(180); }else{ servoPinky.write(0);}
+  if (valsRec[1] == 1) {servoIndex.write(180); }else{ servoIndex.write(0);}
+  if (valsRec[2] == 1) {servoMiddle.write(180); }else{ servoMiddle.write(0);}
+  if (valsRec[3] == 1) {servoRing.write(180); }else{ servoRing.write(0);}
+  if (valsRec[4] == 1) {servoPinky.write(180); }else{ servoPinky.write(0);}
   }

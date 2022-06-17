@@ -75,3 +75,31 @@ ss = cv2.VideoCapture(0,cv2.CAP_DSHOW)
 - Was able to connect the servos to the code
 - Was able to modify the handtrack code a bit to fit needs
 - Was able to understand a majority of the coding done (had to reference once to https://www.arduino.cc/reference/en/language/variables/data-types/array/ to understand how arrays worked)
+
+## Day 4: Connecting multiple servos
+I was able to connect multiple servos to the board and control each servo individual using cvzone. Next, I tried to work with the model I have but it did not work as intended but better than intended. I did have an error initially where it was like:
+```
+void loop() {
+
+  recievedData();
+  if (valsRec[0] == 1) {servoThumb.write(180); }else{ servoThumb.write(0);}
+  if (valsRec[0] == 1) {servoIndex.write(180); }else{ servoIndex.write(0);}
+  if (valsRec[0] == 1) {servoMiddle.write(180); }else{ servoMiddle.write(0);}
+  if (valsRec[0] == 1) {servoRing.write(180); }else{ servoRing.write(0);}
+  if (valsRec[0] == 1) {servoPinky.write(180); }else{ servoPinky.write(0);}
+  }
+```
+Rather than this:
+```
+void loop() {
+
+  recievedData();
+  if (valsRec[0] == 1) {servoThumb.write(180); }else{ servoThumb.write(0);}
+  if (valsRec[1] == 1) {servoIndex.write(180); }else{ servoIndex.write(0);}
+  if (valsRec[2] == 1) {servoMiddle.write(180); }else{ servoMiddle.write(0);}
+  if (valsRec[3] == 1) {servoRing.write(180); }else{ servoRing.write(0);}
+  if (valsRec[4] == 1) {servoPinky.write(180); }else{ servoPinky.write(0);}
+  }
+```
+
+After fixing this, the other fingers were routed to work with the motors rather than only the thumb. I believe this is great progress for what I have done so far for the past 4-5 days and will try to do a remodel of the arm in the following months. Till then, signing off (6/10/22 - 6/16/2022)
